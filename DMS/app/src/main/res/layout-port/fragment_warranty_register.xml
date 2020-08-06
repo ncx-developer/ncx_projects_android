@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical">
+<LinearLayout
+    android:orientation="vertical"
+    android:background="@color/lightGray"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="15dp">
+
+            <TextView
+                android:id="@+id/tvDealer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                android:text="Dealer"
+                app:layout_constraintEnd_toStartOf="@+id/spnDealers"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Spinner
+                android:id="@+id/spnDealers"
+                android:layout_width="300dp"
+                android:layout_height="32dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="150dp"
+                android:background="@drawable/gradient_spinner"
+                android:spinnerMode="dropdown"
+                app:layout_constraintBottom_toBottomOf="@+id/tvDealer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvDealer" />
+
+            <TextView
+                android:id="@+id/tvMechanic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="20dp"
+                android:text="Mechanic"
+                app:layout_constraintEnd_toEndOf="@+id/tvDealer"
+                app:layout_constraintTop_toBottomOf="@+id/tvDealer" />
+
+            <Spinner
+                android:id="@+id/spnMechanics"
+                android:layout_width="300dp"
+                android:layout_height="32dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/gradient_spinner"
+                android:spinnerMode="dropdown"
+                app:layout_constraintBottom_toBottomOf="@+id/tvMechanic"
+                app:layout_constraintStart_toStartOf="@+id/spnDealers"
+                app:layout_constraintTop_toTopOf="@+id/tvMechanic" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                tools:layout_editor_absoluteY="81dp">
+
+
+                <TextView
+                    android:id="@+id/tv_purchaseDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="15dp"
+                    android:text="Puarchase Date"
+                    app:layout_constraintEnd_toStartOf="@+id/dpPurchasedDate"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/dpPurchasedDate"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="150dp"
+                    android:clickable="true"
+                    android:drawableRight="@drawable/calendar"
+                    android:ems="10"
+                    android:focusable="true"
+                    android:inputType="none"
+                    android:text="10/10/2020"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_purchaseDate"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_purchaseDate" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Frame No"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_purchaseDate"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_purchaseDate" />
+
+                <com.ncx.dms.ui.custom.CustomAutoCompleteTextView
+                    android:id="@+id/etFrameNo"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/gradient_spinner"
+                    android:drawableRight="@drawable/circle_check"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:text=""
+                    app:layout_constraintBottom_toBottomOf="@+id/textView"
+                    app:layout_constraintStart_toStartOf="@+id/dpPurchasedDate"
+                    app:layout_constraintTop_toTopOf="@+id/textView" />
+
+                <TextView
+                    android:id="@+id/tvCheckFrameResultMessage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="error"
+                    app:layout_constraintStart_toStartOf="@+id/etFrameNo"
+                    app:layout_constraintTop_toBottomOf="@+id/etFrameNo" />
+
+                <TextView
+                    android:id="@+id/tvProductName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold|italic"
+                    android:text="55"
+                    app:layout_constraintStart_toStartOf="@+id/tvCheckFrameResultMessage"
+                    app:layout_constraintTop_toBottomOf="@+id/tvCheckFrameResultMessage" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Registration No"
+                    app:layout_constraintEnd_toEndOf="@+id/textView"
+                    app:layout_constraintTop_toBottomOf="@+id/tvProductName" />
+
+                <EditText
+                    android:id="@+id/etKilo"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/gradient_spinner"
+                    android:ems="10"
+                    android:gravity="right"
+                    android:inputType="number"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView4"
+                    app:layout_constraintStart_toStartOf="@+id/tvProductName"
+                    app:layout_constraintTop_toTopOf="@+id/textView4" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="10dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                tools:layout_editor_absoluteY="81dp">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="15dp"
+                    android:text="Customer"
+                    app:layout_constraintEnd_toStartOf="@+id/etCustomerName"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/etCustomerName"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="150dp"
+                    android:background="@drawable/gradient_spinner"
+                    android:drawableLeft="@drawable/default_customer"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textView2" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Address"
+                    app:layout_constraintEnd_toEndOf="@+id/textView2"
+                    app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+                <EditText
+                    android:id="@+id/etCustomerAddress"
+                    android:layout_width="400dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/gradient_spinner"
+                    android:drawableLeft="@drawable/house"
+                    android:ems="10"
+                    android:gravity="top|left"
+                    android:hint="Address"
+                    android:inputType="textMultiLine"
+                    android:lines="4"
+                    android:scrollbars="vertical"
+                    app:layout_constraintStart_toStartOf="@+id/etCustomerName"
+                    app:layout_constraintTop_toTopOf="@+id/textView3" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="Phone"
+                    app:layout_constraintEnd_toEndOf="@+id/textView3"
+                    app:layout_constraintTop_toBottomOf="@+id/etCustomerAddress" />
+
+                <EditText
+                    android:id="@+id/etCustomerPhone"
+                    android:layout_width="400dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/gradient_spinner"
+                    android:drawableLeft="@drawable/home_phone"
+                    android:ems="10"
+                    android:inputType="phone"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView5"
+                    app:layout_constraintStart_toStartOf="@+id/etCustomerAddress"
+                    app:layout_constraintTop_toTopOf="@+id/textView5" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="10dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                tools:layout_editor_absoluteY="81dp">
+
+                <EditText
+                    android:id="@+id/etWholesaleName"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="150dp"
+                    android:background="@drawable/gradient_spinner"
+                    android:drawableLeft="@drawable/default_customer"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView6"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textView6" />
+
+                <EditText
+                    android:id="@+id/etWholesaleAddress"
+                    android:layout_width="400dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/gradient_spinner"
+                    android:drawableLeft="@drawable/house"
+                    android:ems="10"
+                    android:gravity="top|left"
+                    android:hint="Address"
+                    android:inputType="textMultiLine"
+                    android:lines="4"
+                    android:scrollbars="vertical"
+                    app:layout_constraintStart_toStartOf="@+id/etWholesaleName"
+                    app:layout_constraintTop_toTopOf="@+id/textView7" />
+
+                <EditText
+                    android:id="@+id/etWholesalePhone"
+                    android:layout_width="400dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/gradient_spinner"
+                    android:drawableLeft="@drawable/home_phone"
+                    android:ems="10"
+                    android:inputType="phone"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView8"
+                    app:layout_constraintStart_toStartOf="@+id/etWholesaleAddress"
+                    app:layout_constraintTop_toTopOf="@+id/textView8" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="15dp"
+                    android:text="Wholesale"
+                    app:layout_constraintEnd_toStartOf="@+id/etWholesaleName"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Address"
+                    app:layout_constraintEnd_toEndOf="@+id/textView6"
+                    app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="Phone"
+                    app:layout_constraintEnd_toEndOf="@+id/textView7"
+                    app:layout_constraintTop_toBottomOf="@+id/etWholesaleAddress" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="5dp"/>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="Save"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:enabled="true"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
+</ScrollView>

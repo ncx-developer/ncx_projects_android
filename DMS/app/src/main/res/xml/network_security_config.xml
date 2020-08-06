@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+</PreferenceScreen>-->
+<!--Not need now (For => cleartext communication to not permitted by network security policy)-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true" />
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">ncxmm.com</domain>
+    </domain-config>
+</network-security-config>
